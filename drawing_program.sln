@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drawing_program", "drawing_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canvas", "Canvas\Canvas.csproj", "{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingFunctions", "DrawingFunctions\DrawingFunctions.csproj", "{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

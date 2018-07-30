@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Canvas
+namespace DrawingFunctions.Canvas
 {
     public interface ICanvasOperation
     {
         bool ClearCurrentCanvas();
 
-        bool DrawCanvas(Canvas canvas);
+        Canvas DrawCanvas(string[] args);
     }
 }

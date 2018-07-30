@@ -76,10 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logics\CommandConsts.cs" />
-    <Compile Include="Logics\ILogic.cs" />
+    <Compile Include="Logics\IDrawingService.cs" />
+    <Compile Include="Logics\Input.cs" />
     <Compile Include="Main\InjectInterfaces.cs" />
-    <Compile Include="Logics\Logic.cs" />
-    <Compile Include="Main\Program.cs" />
+    <Compile Include="Logics\DrawingService.cs" />
+    <Compile Include="Main\MainProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

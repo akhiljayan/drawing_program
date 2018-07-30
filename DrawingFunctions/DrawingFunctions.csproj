@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}</ProjectGuid>
+    <ProjectGuid>{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Canvas</RootNamespace>
-    <AssemblyName>Canvas</AssemblyName>
+    <RootNamespace>DrawingFunctions</RootNamespace>
+    <AssemblyName>DrawingFunctions</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,9 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Canvas.cs" />
-    <Compile Include="CanvasOperation.cs" />
-    <Compile Include="ICanvasOperation.cs" />
+    <Compile Include="Common\Point.cs" />
+    <Compile Include="Line\ILineOperation.cs" />
+    <Compile Include="Line\Line.cs" />
+    <Compile Include="Line\LineOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

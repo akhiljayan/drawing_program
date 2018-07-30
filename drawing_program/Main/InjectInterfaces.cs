@@ -1,4 +1,5 @@
-﻿using Canvas;
+﻿using DrawingFunctions.Canvas;
+using DrawingFunctions.Line;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,12 @@ namespace drawing_program.Logics
         {
             this.container = new UnityContainer();
         }
-        public ILogic Start()
+        public IDrawingService Start()
         {
-            container.RegisterType<ILogic, Logic>();
+            container.RegisterType<IDrawingService, DrawingService>();
             container.RegisterType<ICanvasOperation, CanvasOperation>();
-            return container.Resolve<ILogic>();
+            container.RegisterType<ILineOperation, LineOperation>();
+            return container.Resolve<IDrawingService>();
         }
     }
 }

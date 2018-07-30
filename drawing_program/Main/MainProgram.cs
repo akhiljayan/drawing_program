@@ -6,22 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace drawing_program
-{
-    class Program
+{  
+    class MainProgram
     {
-        public static ILogic logic;
+        public static IDrawingService service;
         static void Main(string[] args)
         {
             var DI = new InjectInterfaces();
-            logic = DI.Start();
+            service = DI.Start();
             string excecuteComand = "";
             do
             {
                 string[] command = Console.ReadLine().Split(' ');
-                if (logic.ValidateCommand(command))
+                if (service.ValidateCommand(command))
                 {
-                    excecuteComand = logic.GetExcecutedCommand(command);
-                    DoOperation(excecuteComand, command);
+                    Input input = service.FormatInput(command);
+                    excecuteComand = input.Command;
                 }
                 else
                 {
@@ -30,16 +30,5 @@ namespace drawing_program
 
             } while (excecuteComand != Command.Quit);
         }
-
-        private static void DoOperation(string excecuteComand, string[] command) {
-            switch (excecuteComand) {
-                case Command.CreateCanvas:
-                    logic.CreateNewCanvas(command);
-                    break;
-            }
-        }
-
-
-
     }
 }

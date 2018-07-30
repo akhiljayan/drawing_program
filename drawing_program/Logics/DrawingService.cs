@@ -1,4 +1,5 @@
-﻿using Canvas;
+﻿using DrawingFunctions.Canvas;
+using DrawingFunctions.Line;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,19 +9,21 @@ using System.Threading.Tasks;
 
 namespace drawing_program.Logics
 {
-    public class Logic : ILogic
+    public class DrawingService : IDrawingService
     {
+
         private List<string> commands = new List<string>() {
             Command.CreateCanvas, Command.Line, Command.Rectangle, Command.FillColor, Command.Quit
         };
-
-        public List<string[]> commandHistory { get; set; }
-
+        public Canvas currentCanvas;
         public static ICanvasOperation canvasOpp;
-        public Logic(ICanvasOperation _canvasOpp)
+        public static ILineOperation lineOpp;
+
+        public DrawingService(ICanvasOperation _canvasOpp, ILineOperation _lineOpp)
         {
             canvasOpp = _canvasOpp;
-            commandHistory = new List<string[]>();
+            lineOpp = _lineOpp;
+            currentCanvas = new Canvas();
         }
 
         public bool ValidateCommand(string[] command) {
@@ -48,18 +51,40 @@ namespace drawing_program.Logics
             }
         }
 
+
+        public Input FormatInput(string[] command) {
+            var cmd = command[0];
+            var args = command.Skip(1).ToArray();
+            return new Input(cmd, args);
+        }
+
+
+        public void ExcecuteCommand(Input input) {
+            switch (input.Command)
+            {
+                case (Command.CreateCanvas):
+                    currentCanvas = canvasOpp.DrawCanvas(input.Args);
+                    ProcessCanvas(currentCanvas);
+                    break;
+                case (Command.Line):
+                    currentCanvas = lineOpp.DrawLine(input.Args, currentCanvas);
+                    ProcessCanvas(currentCanvas);
+                    break;
+            }
+        }
+
+        private void ProcessCanvas(Canvas canvas) {
+            currentCanvas = canvas;
+        }
+
+
         public string GetExcecutedCommand(string[] command) {
             return command[0].ToUpper();
         }
 
-        public bool CreateNewCanvas(string[] command)
+        public Canvas GetFinalCanvas()
         {
-            commandHistory.Clear();
-            Canvas.Canvas canvas = new Canvas.Canvas();
-            canvas.Width = Convert.ToInt32(command[1]);
-            canvas.Height = Convert.ToInt32(command[2]);
-            commandHistory.Add(command);
-            return canvasOpp.DrawCanvas(canvas);
+            return currentCanvas;
         }
     }
 }

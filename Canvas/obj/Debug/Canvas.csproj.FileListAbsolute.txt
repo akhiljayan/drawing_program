@@ -1,6 +1,0 @@
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\Canvas\obj\Debug\Canvas.csprojResolveAssemblyReference.cache
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\Canvas\bin\Debug\Canvas.dll.config
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\Canvas\bin\Debug\Canvas.dll
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\Canvas\bin\Debug\Canvas.pdb
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\Canvas\obj\Debug\Canvas.dll
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\Canvas\obj\Debug\Canvas.pdb
