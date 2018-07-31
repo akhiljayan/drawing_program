@@ -22,6 +22,8 @@ namespace drawing_program
                 {
                     Input input = service.FormatInput(command);
                     excecuteComand = input.Command;
+                    service.ExcecuteCommand(input);
+                    Console.Write(service.GetFinalCanvasAsString());
                 }
                 else
                 {

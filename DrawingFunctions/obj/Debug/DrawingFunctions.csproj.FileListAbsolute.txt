@@ -1,0 +1,6 @@
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\DrawingFunctions\bin\Debug\DrawingFunctions.dll.config
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\DrawingFunctions\bin\Debug\DrawingFunctions.dll
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\DrawingFunctions\bin\Debug\DrawingFunctions.pdb
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.csprojResolveAssemblyReference.cache
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.dll
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.pdb

@@ -20,5 +20,5 @@ C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\dra
 C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\drawing_program\bin\Debug\Unity.Interception.Configuration.pdb
 C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\drawing_program\bin\Debug\Unity.RegistrationByConvention.pdb
 C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\drawing_program\bin\Debug\Unity.ServiceLocation.pdb
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\drawing_program\bin\Debug\Canvas.dll
-C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\drawing_program\bin\Debug\Canvas.pdb
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\drawing_program\bin\Debug\DrawingFunctions.dll
+C:\Users\AkhilJayan\Desktop\akjn\Workspace\dotnet\CreditSwis\drawing_program\drawing_program\bin\Debug\DrawingFunctions.pdb

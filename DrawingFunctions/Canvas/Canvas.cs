@@ -10,15 +10,17 @@ namespace DrawingFunctions.Canvas
     {
         public CanvasCell[,] Cells { get; private set; }
 
-        public int Width { get; private set; }
+        public uint Width { get; private set; }
 
-        public int Height { get; private set; }
+        public uint Height { get; private set; }
 
         public Canvas() {
         }
 
         public Canvas(uint width, uint height)
         {
+            this.Height = height;
+            this.Width = width;
             Initialize(width, height);
         }
 

@@ -20,7 +20,7 @@ namespace DrawingFunctions.Line
 
         private Canvas.Canvas DrawLineInCanvas(Line lineToDraw, Canvas.Canvas existingCanvas)
         {
-            List<Point> linePoints = ProcessPoineForLine(lineToDraw);
+            List<Point> linePoints = ProcessPoineForLine(lineToDraw, existingCanvas.Height);
             foreach (Point pt in linePoints)
             {
                 CanvasCell content = new CanvasCell(ContentCharacter.Line, 'x');
@@ -30,46 +30,52 @@ namespace DrawingFunctions.Line
         }
 
 
-        private List<Point> ProcessPoineForLine(Line line)
+        private List<Point> ProcessPoineForLine(Line line, uint canvasHeight)
         {
             List<Point> linePoints = new List<Point>();
+            uint startX = line.StartingPoint.X - 1;
+            uint startY = canvasHeight - (line.StartingPoint.Y);
+
+            uint endX = line.EndingPoint.X - 1;
+            uint endY = canvasHeight - (line.EndingPoint.Y);
+
             if (line.StartingPoint == line.EndingPoint)
             {
                 linePoints.Add(line.EndingPoint);
                 return linePoints;
             }
-            else if (line.IsLineHorizontal)
+            else if (line.IsLineVertical)
             {
-                if (line.EndingPoint.Y > line.StartingPoint.Y)
+                if (endY > startY)
                 {
-                    for (var i = line.StartingPoint.Y; i <= line.EndingPoint.Y; i++)
+                    for (var i = startY; i <= endY; i++)
                     {
-                        linePoints.Add(new Point(line.StartingPoint.X, i));
+                        linePoints.Add(new Point(startX, i));
                     }
                 }
                 else
-                {
-                    for (var i = line.StartingPoint.Y; i >= line.EndingPoint.Y; i--)
+                 {
+                    for (var i = startY; i >= endY; i--)
                     {
-                        linePoints.Add(new Point(line.StartingPoint.X, i));
+                        linePoints.Add(new Point(startX, i));
                     }
                 }
             }
-            else if (line.IsLineVertical)
+            else if (line.IsLineHorizontal)
             {
-                if (line.EndingPoint.X > line.StartingPoint.X)
+                if (endX > startX)
                 {
-                    for (var i = line.StartingPoint.X; i <= line.EndingPoint.X; i++)
+                    for (var i = startX; i <= endX; i++)
                     {
-                        linePoints.Add(new Point(i, line.StartingPoint.Y));
+                        linePoints.Add(new Point(i, startY));
                     }
 
                 }
                 else
                 {
-                    for (var i = line.StartingPoint.X; i >= line.EndingPoint.X; i--)
+                    for (var i = startX; i >= endX; i--)
                     {
-                        linePoints.Add(new Point(i, line.StartingPoint.Y));
+                        linePoints.Add(new Point(i, startY));
                     }
                 }
             }

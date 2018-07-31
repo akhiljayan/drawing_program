@@ -17,7 +17,7 @@ namespace drawing_program.Logics
 
         string GetExcecutedCommand(string[] command);
 
-        Canvas GetFinalCanvas();
+        string GetFinalCanvasAsString();
 
     }
 }

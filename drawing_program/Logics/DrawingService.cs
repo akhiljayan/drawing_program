@@ -26,7 +26,8 @@ namespace drawing_program.Logics
             currentCanvas = new Canvas();
         }
 
-        public bool ValidateCommand(string[] command) {
+        public bool ValidateCommand(string[] command)
+        {
             string inputCommand = GetExcecutedCommand(command);
             if (commands.Contains(inputCommand))
             {
@@ -46,21 +47,24 @@ namespace drawing_program.Logics
                         return false;
                 }
             }
-            else {
+            else
+            {
                 return false;
             }
         }
 
 
-        public Input FormatInput(string[] command) {
+        public Input FormatInput(string[] command)
+        {
             var cmd = command[0];
             var args = command.Skip(1).ToArray();
             return new Input(cmd, args);
         }
 
 
-        public void ExcecuteCommand(Input input) {
-            switch (input.Command)
+        public void ExcecuteCommand(Input input)
+        {
+            switch (input.Command.ToUpper())
             {
                 case (Command.CreateCanvas):
                     currentCanvas = canvasOpp.DrawCanvas(input.Args);
@@ -73,18 +77,65 @@ namespace drawing_program.Logics
             }
         }
 
-        private void ProcessCanvas(Canvas canvas) {
+        private void ProcessCanvas(Canvas canvas)
+        {
             currentCanvas = canvas;
         }
 
 
-        public string GetExcecutedCommand(string[] command) {
+        public string GetExcecutedCommand(string[] command)
+        {
             return command[0].ToUpper();
         }
 
-        public Canvas GetFinalCanvas()
+        public string GetFinalCanvasAsString()
         {
-            return currentCanvas;
+            uint borderWidth = currentCanvas.Width;
+            uint borderheight = currentCanvas.Height;
+            var stringBuilder = new StringBuilder();
+            for (var i = 0; i < borderWidth+2; i++)
+            {
+                if (i == 0)
+                {
+                    stringBuilder.Append('╔');
+                }
+                else if (i == (borderWidth+2)-1)
+                {
+                    stringBuilder.Append('╗');
+                }
+                else
+                {
+                    stringBuilder.Append('═');
+                }
+            }
+            stringBuilder.Append(Environment.NewLine);
+            for (var j = 0; j < borderheight; j++)
+            {
+                stringBuilder.Append('║');
+                for (var i = 0; i < currentCanvas.Width; i++)
+                {
+                    stringBuilder.Append(currentCanvas.Cells[i, j].content);
+                }
+                stringBuilder.Append('║');
+                stringBuilder.Append(Environment.NewLine);
+            }
+            for (var i = 0; i < borderWidth + 2; i++)
+            {
+                if (i == 0)
+                {
+                    stringBuilder.Append('╚');
+                }
+                else if (i == (borderWidth+2) - 1)
+                {
+                    stringBuilder.Append('╝');
+                }
+                else
+                {
+                    stringBuilder.Append('═');
+                }
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }

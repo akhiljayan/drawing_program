@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drawing_program", "drawing_program\drawing_program.csproj", "{4F392C28-ECAF-4F61-A59A-1111189B2D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canvas", "Canvas\Canvas.csproj", "{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingFunctions", "DrawingFunctions\DrawingFunctions.csproj", "{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{4F392C28-ECAF-4F61-A59A-1111189B2D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F392C28-ECAF-4F61-A59A-1111189B2D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F392C28-ECAF-4F61-A59A-1111189B2D32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC6B38B8-C197-4D2C-8B4D-E666DD1284CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
