@@ -54,6 +54,9 @@
     <Compile Include="Line\Line.cs" />
     <Compile Include="Line\LineOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle\IRectangleOperation.cs" />
+    <Compile Include="Rectangle\Rectangle.cs" />
+    <Compile Include="Rectangle\RectangleOperation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
