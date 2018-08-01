@@ -32,13 +32,6 @@ namespace DrawingFunctions.Canvas
                 uint height = Convert.ToUInt32(args[1]);
                 Canvas canvas = new Canvas(width, height);
                 return canvas;
-                //DrawCanvasBorder(canvas.Width, '╔', '═', '╗');
-                //for (int i = 0; i < canvas.Height; ++i)
-                //{
-                //    DrawCanvasBorder(canvas.Width, '║', ' ', '║');
-                //}
-                //DrawCanvasBorder(canvas.Width, '╚', '═', '╝');
-                //return true;
             }
             catch (Exception e)
             {

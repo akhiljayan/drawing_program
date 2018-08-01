@@ -10,5 +10,7 @@ namespace DrawingFunctions.Line
     public interface ILineOperation
     {
         Canvas.Canvas DrawLine(string[] args, Canvas.Canvas existingCanvas);
+
+        Canvas.Canvas DrawLineInCanvas(Line lineToDraw, Canvas.Canvas existingCanvas);
     }
 }

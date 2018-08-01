@@ -1,5 +1,6 @@
 ﻿using DrawingFunctions.Canvas;
 using DrawingFunctions.Line;
+using DrawingFunctions.Rectangle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +19,13 @@ namespace drawing_program.Logics
         public Canvas currentCanvas;
         public static ICanvasOperation canvasOpp;
         public static ILineOperation lineOpp;
+        public static IRectangleOperation rectOpp;
 
-        public DrawingService(ICanvasOperation _canvasOpp, ILineOperation _lineOpp)
+        public DrawingService(ICanvasOperation _canvasOpp, ILineOperation _lineOpp, IRectangleOperation _rectOpp)
         {
             canvasOpp = _canvasOpp;
             lineOpp = _lineOpp;
+            rectOpp = _rectOpp;
             currentCanvas = new Canvas();
         }
 
@@ -72,6 +75,10 @@ namespace drawing_program.Logics
                     break;
                 case (Command.Line):
                     currentCanvas = lineOpp.DrawLine(input.Args, currentCanvas);
+                    ProcessCanvas(currentCanvas);
+                    break;
+                case (Command.Rectangle):
+                    currentCanvas = rectOpp.DrawRectangle(input.Args, currentCanvas);
                     ProcessCanvas(currentCanvas);
                     break;
             }

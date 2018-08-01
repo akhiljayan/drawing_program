@@ -18,7 +18,7 @@ namespace DrawingFunctions.Line
             return DrawLineInCanvas(lineToDraw, existingCanvas);
         }
 
-        private Canvas.Canvas DrawLineInCanvas(Line lineToDraw, Canvas.Canvas existingCanvas)
+        public Canvas.Canvas DrawLineInCanvas(Line lineToDraw, Canvas.Canvas existingCanvas)
         {
             List<Point> linePoints = ProcessPoineForLine(lineToDraw, existingCanvas.Height);
             foreach (Point pt in linePoints)
