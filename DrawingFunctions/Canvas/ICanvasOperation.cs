@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawingFunctions.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,7 @@ namespace DrawingFunctions.Canvas
         bool ClearCurrentCanvas();
 
         Canvas DrawCanvas(string[] args);
+
+        bool IsPointOutOfBounds(Point point, Canvas existingCanvas);
     }
 }

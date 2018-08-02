@@ -1,4 +1,5 @@
 ﻿using DrawingFunctions.Canvas;
+using DrawingFunctions.ColorFill;
 using DrawingFunctions.Line;
 using DrawingFunctions.Rectangle;
 using System;
@@ -20,12 +21,15 @@ namespace drawing_program.Logics
         public static ICanvasOperation canvasOpp;
         public static ILineOperation lineOpp;
         public static IRectangleOperation rectOpp;
+        public static IColorFillOperation fillOpp;
 
-        public DrawingService(ICanvasOperation _canvasOpp, ILineOperation _lineOpp, IRectangleOperation _rectOpp)
+
+        public DrawingService(ICanvasOperation _canvasOpp, ILineOperation _lineOpp, IRectangleOperation _rectOpp, IColorFillOperation _fillOpp)
         {
             canvasOpp = _canvasOpp;
             lineOpp = _lineOpp;
             rectOpp = _rectOpp;
+            fillOpp = _fillOpp;
             currentCanvas = new Canvas();
         }
 
@@ -79,6 +83,10 @@ namespace drawing_program.Logics
                     break;
                 case (Command.Rectangle):
                     currentCanvas = rectOpp.DrawRectangle(input.Args, currentCanvas);
+                    ProcessCanvas(currentCanvas);
+                    break;
+                case (Command.FillColor):
+                    currentCanvas = fillOpp.FillColor(input.Args, currentCanvas);
                     ProcessCanvas(currentCanvas);
                     break;
             }
