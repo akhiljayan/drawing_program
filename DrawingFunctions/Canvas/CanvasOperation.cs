@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DrawingFunctions.Common;
 
 namespace DrawingFunctions.Canvas
 {
@@ -39,6 +40,15 @@ namespace DrawingFunctions.Canvas
             }
         }
 
+        public bool IsPointOutOfBounds(Point point, Canvas existingCanvas)
+        {
+            return point.X > existingCanvas.Width || point.Y > existingCanvas.Height;
+        }
+
+        public bool ValidateCanvas(Canvas currentCanvas, string[] args)
+        {
+            return true;
+        }
 
         private void DrawCanvasBorder(int width, char startChar, char middleChar, char endChar)
         {

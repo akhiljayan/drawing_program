@@ -1,4 +1,5 @@
 ﻿using DrawingFunctions.Canvas;
+using DrawingFunctions.ColorFill;
 using DrawingFunctions.Line;
 using DrawingFunctions.Rectangle;
 using System;
@@ -20,12 +21,15 @@ namespace drawing_program.Logics
         public static ICanvasOperation canvasOpp;
         public static ILineOperation lineOpp;
         public static IRectangleOperation rectOpp;
+        public static IColorFillOperation fillOpp;
 
-        public DrawingService(ICanvasOperation _canvasOpp, ILineOperation _lineOpp, IRectangleOperation _rectOpp)
+
+        public DrawingService(ICanvasOperation _canvasOpp, ILineOperation _lineOpp, IRectangleOperation _rectOpp, IColorFillOperation _fillOpp)
         {
             canvasOpp = _canvasOpp;
             lineOpp = _lineOpp;
             rectOpp = _rectOpp;
+            fillOpp = _fillOpp;
             currentCanvas = new Canvas();
         }
 
@@ -65,22 +69,81 @@ namespace drawing_program.Logics
         }
 
 
-        public void ExcecuteCommand(Input input)
+        public bool ExcecuteCommand(Input input)
         {
+            bool returnFlag = false;
             switch (input.Command.ToUpper())
             {
                 case (Command.CreateCanvas):
-                    currentCanvas = canvasOpp.DrawCanvas(input.Args);
-                    ProcessCanvas(currentCanvas);
+                    returnFlag = SetUpCanvas(currentCanvas, input);
                     break;
                 case (Command.Line):
-                    currentCanvas = lineOpp.DrawLine(input.Args, currentCanvas);
-                    ProcessCanvas(currentCanvas);
+                    returnFlag = SetUpLine(currentCanvas, input);
                     break;
                 case (Command.Rectangle):
-                    currentCanvas = rectOpp.DrawRectangle(input.Args, currentCanvas);
-                    ProcessCanvas(currentCanvas);
+                    returnFlag = SetUpRectangle(currentCanvas, input);
                     break;
+                case (Command.FillColor):
+                    returnFlag = SetUpFillColor(currentCanvas, input);
+                    break;
+            }
+
+            return returnFlag;
+        }
+
+        private bool SetUpCanvas(Canvas currentCanvas, Input input)
+        {
+            if (canvasOpp.ValidateCanvas(currentCanvas, input.Args))
+            {
+                currentCanvas = canvasOpp.DrawCanvas(input.Args);
+                ProcessCanvas(currentCanvas);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool SetUpLine(Canvas currentCanvas, Input input)
+        {
+            if (lineOpp.ValidateLine(currentCanvas, input.Args))
+            {
+                currentCanvas = lineOpp.DrawLine(input.Args, currentCanvas);
+                ProcessCanvas(currentCanvas);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool SetUpRectangle(Canvas currentCanvas, Input input)
+        {
+            if (rectOpp.ValidateRectangle(currentCanvas, input.Args))
+            {
+                currentCanvas = rectOpp.DrawRectangle(input.Args, currentCanvas);
+                ProcessCanvas(currentCanvas);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool SetUpFillColor(Canvas currentCanvas, Input input)
+        {
+            if (fillOpp.ValidateFillColor(currentCanvas, input.Args))
+            {
+                currentCanvas = fillOpp.FillColor(input.Args, currentCanvas);
+                ProcessCanvas(currentCanvas);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -100,13 +163,13 @@ namespace drawing_program.Logics
             uint borderWidth = currentCanvas.Width;
             uint borderheight = currentCanvas.Height;
             var stringBuilder = new StringBuilder();
-            for (var i = 0; i < borderWidth+2; i++)
+            for (var i = 0; i < borderWidth + 2; i++)
             {
                 if (i == 0)
                 {
                     stringBuilder.Append('╔');
                 }
-                else if (i == (borderWidth+2)-1)
+                else if (i == (borderWidth + 2) - 1)
                 {
                     stringBuilder.Append('╗');
                 }
@@ -132,7 +195,7 @@ namespace drawing_program.Logics
                 {
                     stringBuilder.Append('╚');
                 }
-                else if (i == (borderWidth+2) - 1)
+                else if (i == (borderWidth + 2) - 1)
                 {
                     stringBuilder.Append('╝');
                 }

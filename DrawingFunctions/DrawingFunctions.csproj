@@ -49,6 +49,8 @@
     <Compile Include="Canvas\Canvas.cs" />
     <Compile Include="Canvas\CanvasOperation.cs" />
     <Compile Include="Canvas\ICanvasOperation.cs" />
+    <Compile Include="ColorFill\ColorFillOperation.cs" />
+    <Compile Include="ColorFill\IColorFillOperation.cs" />
     <Compile Include="Common\Point.cs" />
     <Compile Include="Line\ILineOperation.cs" />
     <Compile Include="Line\Line.cs" />

@@ -9,5 +9,7 @@ namespace DrawingFunctions.Rectangle
     public interface IRectangleOperation
     {
         Canvas.Canvas DrawRectangle(string[] args, Canvas.Canvas existingCanvas);
+
+        bool ValidateRectangle(Canvas.Canvas existingCanvas, string[] args);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DrawingFunctions.Canvas;
+using DrawingFunctions.ColorFill;
 using DrawingFunctions.Line;
 using DrawingFunctions.Rectangle;
 using System;
@@ -24,6 +25,7 @@ namespace drawing_program.Logics
             container.RegisterType<ICanvasOperation, CanvasOperation>();
             container.RegisterType<ILineOperation, LineOperation>();
             container.RegisterType<IRectangleOperation, RectangleOperation>();
+            container.RegisterType<IColorFillOperation, ColorFillOperation>();
             return container.Resolve<IDrawingService>();
         }
     }

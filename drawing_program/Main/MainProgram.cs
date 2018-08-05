@@ -21,9 +21,11 @@ namespace drawing_program
                 if (service.ValidateCommand(command))
                 {
                     Input input = service.FormatInput(command);
-                    excecuteComand = input.Command;
-                    service.ExcecuteCommand(input);
-                    Console.Write(service.GetFinalCanvasAsString());
+                    excecuteComand = input.Command.ToUpper();
+                    if (service.ExcecuteCommand(input))
+                    {
+                        Console.Write(service.GetFinalCanvasAsString());
+                    }
                 }
                 else
                 {

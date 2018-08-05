@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drawing_program", "drawing_program\drawing_program.csproj", "{4F392C28-ECAF-4F61-A59A-1111189B2D32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawingFunctions", "DrawingFunctions\DrawingFunctions.csproj", "{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{9E2153F4-A63F-4D4A-BCA4-D3205ACBD1E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45C74D88-EAC6-4418-A4DE-2FFDCA2BA5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E2153F4-A63F-4D4A-BCA4-D3205ACBD1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E2153F4-A63F-4D4A-BCA4-D3205ACBD1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E2153F4-A63F-4D4A-BCA4-D3205ACBD1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E2153F4-A63F-4D4A-BCA4-D3205ACBD1E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BF46F7E-28C6-484D-9CF9-CDA45EE0B013}
 	EndGlobalSection
 EndGlobal

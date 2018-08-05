@@ -13,7 +13,7 @@ namespace drawing_program.Logics
 
         Input FormatInput(string[] command);
 
-        void ExcecuteCommand(Input input);
+        bool ExcecuteCommand(Input input);
 
         string GetExcecutedCommand(string[] command);
 

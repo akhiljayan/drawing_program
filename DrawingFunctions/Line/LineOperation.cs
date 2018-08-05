@@ -10,10 +10,18 @@ namespace DrawingFunctions.Line
 {
     public class LineOperation : ILineOperation
     {
+        public static ICanvasOperation canvasOpp;
+
+        public LineOperation(ICanvasOperation _canvasOpp)
+        {
+            canvasOpp = _canvasOpp;
+        }
+
         public Canvas.Canvas DrawLine(string[] args, Canvas.Canvas existingCanvas)
         {
-            Point point1 = new Point(Convert.ToUInt32(args[0]), Convert.ToUInt32(args[1]));
-            Point point2 = new Point(Convert.ToUInt32(args[2]), Convert.ToUInt32(args[3]));
+            List<Point> points = LinePoints(args);
+            Point point1 = points[0];
+            Point point2 = points[1];
             Line lineToDraw = new Line(point1, point2);
             return DrawLineInCanvas(lineToDraw, existingCanvas);
         }
@@ -29,6 +37,29 @@ namespace DrawingFunctions.Line
             return existingCanvas;
         }
 
+        public bool ValidateLine(Canvas.Canvas existingCanvas, string[] args)
+        {
+            List<Point> points = LinePoints(args);
+            Point point1 = points[0];
+            Point point2 = points[1];
+            if (canvasOpp.IsPointOutOfBounds(point1, existingCanvas) || canvasOpp.IsPointOutOfBounds(point2, existingCanvas))
+            {
+                Console.WriteLine("Point(s) for the line are out of Canvas.");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private List<Point> LinePoints(string[] args)
+        {
+            List<Point> points = new List<Point>();
+            points.Add(new Point(Convert.ToUInt32(args[0]), Convert.ToUInt32(args[1])));
+            points.Add(new Point(Convert.ToUInt32(args[2]), Convert.ToUInt32(args[3])));
+            return points;
+        }
 
         private List<Point> ProcessPoineForLine(Line line, uint canvasHeight)
         {
@@ -54,7 +85,7 @@ namespace DrawingFunctions.Line
                     }
                 }
                 else
-                 {
+                {
                     for (var i = startY; i >= endY; i--)
                     {
                         linePoints.Add(new Point(startX, i));

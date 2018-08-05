@@ -12,5 +12,7 @@ namespace DrawingFunctions.Line
         Canvas.Canvas DrawLine(string[] args, Canvas.Canvas existingCanvas);
 
         Canvas.Canvas DrawLineInCanvas(Line lineToDraw, Canvas.Canvas existingCanvas);
+
+        bool ValidateLine(Canvas.Canvas existingCanvas, string[] args);
     }
 }
