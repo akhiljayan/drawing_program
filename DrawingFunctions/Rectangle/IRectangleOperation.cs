@@ -11,5 +11,7 @@ namespace DrawingFunctions.Rectangle
         Canvas.Canvas DrawRectangle(string[] args, Canvas.Canvas existingCanvas);
 
         bool ValidateRectangle(Canvas.Canvas existingCanvas, string[] args);
+
+        Rectangle GetRectangleObjectsFromInput(string[] args);
     }
 }

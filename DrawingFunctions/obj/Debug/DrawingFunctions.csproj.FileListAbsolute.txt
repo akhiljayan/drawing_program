@@ -11,3 +11,10 @@ D:\workspace\Credit\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.
 D:\workspace\Credit\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.csproj.CoreCompileInputs.cache
 D:\workspace\Credit\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.dll
 D:\workspace\Credit\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.pdb
+D:\workspace\drawing_program\DrawingFunctions\bin\Debug\DrawingFunctions.dll.config
+D:\workspace\drawing_program\DrawingFunctions\bin\Debug\DrawingFunctions.dll
+D:\workspace\drawing_program\DrawingFunctions\bin\Debug\DrawingFunctions.pdb
+D:\workspace\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.csproj.CoreCompileInputs.cache
+D:\workspace\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.dll
+D:\workspace\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.pdb
+D:\workspace\drawing_program\DrawingFunctions\obj\Debug\DrawingFunctions.csprojAssemblyReference.cache

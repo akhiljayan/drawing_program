@@ -44,7 +44,7 @@ namespace DrawingFunctions.Rectangle
         }
 
 
-        private Rectangle GetRectangleObjectsFromInput(string[] args)
+        public Rectangle GetRectangleObjectsFromInput(string[] args)
         {
             Point TopLeft = new Point(Convert.ToUInt32(args[0]), Convert.ToUInt32(args[1]));
             Point BottomRight = new Point(Convert.ToUInt32(args[2]), Convert.ToUInt32(args[3]));

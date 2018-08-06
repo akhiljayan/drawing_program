@@ -38,6 +38,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Shouldly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shouldly.3.0.0\lib\net451\Shouldly.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,14 +67,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Canvas\Canvas_Test.cs" />
+    <Compile Include="Canvas_Test.cs" />
+    <Compile Include="Line_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DrawingFunctions\DrawingFunctions.csproj">
+      <Project>{45c74d88-eac6-4418-a4de-2ffdca2ba5cf}</Project>
+      <Name>DrawingFunctions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\drawing_program\drawing_program.csproj">
+      <Project>{4f392c28-ecaf-4f61-a59a-1111189b2d32}</Project>
+      <Name>drawing_program</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>

@@ -47,7 +47,17 @@ namespace DrawingFunctions.Canvas
 
         public bool ValidateCanvas(Canvas currentCanvas, string[] args)
         {
-            return true;
+            uint width = Convert.ToUInt32(args[0]);
+            uint height = Convert.ToUInt32(args[1]);
+            if (width <= 165)
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Please provide a width less than 165 for canvas");
+                return false;
+            }            
         }
 
         private void DrawCanvasBorder(int width, char startChar, char middleChar, char endChar)
